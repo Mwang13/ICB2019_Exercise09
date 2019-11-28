@@ -1,19 +1,37 @@
-Q2
+Ex09 Q2
+#read the file
   Data02<-read.delim(file = "data.txt",header = T, sep=',')
- 
+ #use ggplot and cowplot
   library(ggplot)
   library(cowplot)
-  c<- ggplot(Data02,aes(x=region,y=observations))+
-    stat_summary(geom = "bar",fun.y = "mean")+
-    xlab("region")+ylab("observations")+
-    geom_jitter(aes(as.factor(region)))
-  
+ #draw bar picture using data02
+ 
   b<- ggplot(Data02,aes(x=region,y=observations))+
     stat_summary(geom = "bar",fun.y = "mean")+
     xlab("region")+ylab("observations")+
     coord_cartesian(ylim = c(14.75,15.3))
-  
-  
+    
+  #using geom_jitter to draw scatter plots in bar picture
+   c<- ggplot(Data02,aes(x=region,y=observations))+
+    stat_summary(geom = "bar",fun.y = "mean")+
+    xlab("region")+ylab("observations")+
+    geom_jitter(aes(as.factor(region)))
    
  b
  c
+ 
+ Ex09 Q1
+   #read a randomly creted matrix and give its name Eg2
+   Eg2<- mtcars
+    #use function ggplot and cowplot
+      library(ggplot2)
+      library(cowplot)
+      #draw trendline and plots
+    a <- ggplot(data = Eg2, aes(x=hp, y= mpg))+
+        geom_point(color= "red", size=2)+
+        theme_bw()+
+        xlab("hp")+
+        ylab("mpg")+
+      stat_smooth(method = "lm", formula = y ~ x, size = 1)
+      
+      a
