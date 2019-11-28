@@ -1,0 +1,19 @@
+Q2
+  Data02<-read.delim(file = "data.txt",header = T, sep=',')
+ 
+  library(ggplot)
+  library(cowplot)
+  c<- ggplot(Data02,aes(x=region,y=observations))+
+    stat_summary(geom = "bar",fun.y = "mean")+
+    xlab("region")+ylab("observations")+
+    geom_jitter(aes(as.factor(region)))
+  
+  b<- ggplot(Data02,aes(x=region,y=observations))+
+    stat_summary(geom = "bar",fun.y = "mean")+
+    xlab("region")+ylab("observations")+
+    coord_cartesian(ylim = c(14.75,15.3))
+  
+  
+   
+ b
+ c
