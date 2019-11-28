@@ -19,7 +19,8 @@ Ex09 Q2
    
  b
  c
- 
+ # scatter and jitter can tell the different stories: in bar, even I use coord_cartesian, I still cannot tell the details difference 
+ # between three groups, however, when using jitter, I can see the exactly location of each plots which shows details
  Ex09 Q1
    #read a randomly creted matrix and give its name Eg2
    Eg2<- mtcars
